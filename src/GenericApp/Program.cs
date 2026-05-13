@@ -1,5 +1,5 @@
 ﻿using GenericApp;
-
+using GenericRepositoryDemo;
 // // Обмен строк
 // string str1 = "Hello", str2 = "World";
 // Console.WriteLine($"До обмена: str1 = {str1}, str2 = {str2}");
@@ -64,3 +64,20 @@ Console.WriteLine($"Max из Apple и Banana: {maxStr}");
 
 double minDouble = Calculator.Min(3.14, 2.71);
 Console.WriteLine($"Min из 3.14 и 2.71: {minDouble}");
+
+
+
+
+
+var userRepo = new Repository<User>();
+var productRepo = new Repository<Product>();
+
+userRepo.Add(new User { Name = "Ероп", Age = 20 });
+userRepo.Add(new User { Name = "Кирилл", Age = 21 });
+
+productRepo.Add(new Product { Title = "Ноябрь", Price = 50000 });
+productRepo.Add(new Product { Title = "Телефон", Price = 40000 });
+
+userRepo.PrintAll();
+Console.WriteLine();
+productRepo.PrintAll();
